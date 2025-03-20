@@ -1,0 +1,185 @@
+/* reset css */
+
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* styles */
+/* TODO: Cambiar la fuente
+
+* {
+  font-family: comic-sans;
+} */
+
+body {
+  margin: 0;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura de la ventana */
+  background-image: url('cinnamoroll-laptop-4bjmy64xlmau3.jpg'); /* Ruta de la imagen */
+  background-size: cover; /* Escala la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en la pantalla */
+  font-family: Arial, sans-serif; /* Fuente predeterminada */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-letter {
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 100px solid #33e0fe;
+  border-bottom: 100px solid transparent;
+
+  /*  */
+  transition: transform .75s;
+  transform-origin: top;
+}
+ .back-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #c7f8f8; /* Mismo color que la solapa */
+  z-index: -2; /* Coloca detrás de la solapa y la carta */
+  border-radius: 10px; /* Opcional: bordes redondeados para que coincida con el diseño */
+}
+
+.paper {
+  position: absolute;
+  padding: 1.5rem;
+  line-height: 2rem;
+  right: 5px;
+  /*  */
+  z-index: -1;
+  background: rgb(250, 251, 252);
+  width: 390px;
+  height: 180px;
+border-radius: 15px;
+  transition: all .75s;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Cambia el tipo de letra */
+  font-size: 1rem; /* Ajusta el tamaño de la letra si es necesario */
+}
+
+.letter {
+  border-left: 200px solid #c7f8f8;
+  border-right: 200px solid #c7f8f8;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid #c7f8f8;
+}
+
+.options {
+  display: flex;
+  gap: 5rem;
+
+  & button {
+    color: #79ddfc;
+    font-weight: 600;
+    border-radius: 3px;
+    background: #f8f3f5;
+    padding: 0.5rem 1rem;
+    border: 1px solid #cde6fa;
+    cursor: pointer;
+  }
+
+  & button:hover {
+    background: #a5c5ee;
+    color: white;
+  }
+}
+
+.open-cover {
+  transform: rotatex(180deg);
+}
+
+.open-paper {
+  animation: openPaper .5s forwards;
+}
+
+@keyframes openPaper {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -160px;
+  }
+}
+
+.close-paper {
+  animation: closePaper .5s forwards;
+}
+
+@keyframes closePaper {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+
+.heart {
+  display: none; /* Oculto inicialmente */
+  position: absolute;
+  top: 25%; /* Ajusta la posición vertical */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%);
+  width: 100px; /* Ajusta el tamaño de la imagen */
+  height: auto; /* Mantén la proporción de la imagen */
+  z-index: 3;
+  animation: crecer 1s forwards; /* Aplica la animación */
+}
+
+@keyframes crecer {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 3; /* La imagen crece */
+    opacity: 0; /* La imagen desaparece */
+  }
+}
